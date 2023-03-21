@@ -1,18 +1,21 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Providers from "../components/Providers";
 import { cn } from "../utils/utils";
 import { Toaster } from "@/components/ui/toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const msPlus = M_PLUS_Rounded_1c({
+  weight: ["400", "500", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
       lang="en"
-      className={cn("bg-white text-slate-900 antialiased", inter.className)}
+      className={cn("bg-white text-sky-900 antialiased", msPlus.className)}
     >
       <body className="min-h-screen bg-slate-50 dark:bg-sky-900 antialiased">
         <Providers>
