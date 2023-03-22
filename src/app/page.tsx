@@ -26,7 +26,7 @@ export default function Home() {
               Sign up with a free{" "}
               <Link
                 href="/login"
-                className="underline underline-offset-2 text-black font-bold dark:text-amber-300"
+                className="underline underline-offset-2 text-black font-bold dark:text-amber-300 hover:text-amber-300 dark:hover:text-white"
               >
                 API key
               </Link>

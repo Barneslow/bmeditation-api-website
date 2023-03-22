@@ -35,7 +35,9 @@ const ApiDashboard = async ({}) => {
     <div className="container flex flex-col gap-6">
       <h1 className="heading">Welcome back, {user.user.name}</h1>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
-        <p className="text-white text-s md:text-lg">Your API key:</p>
+        <p className="text-white font-bold text-s md:text-lg hover:text-amber-300">
+          Your API key:
+        </p>
 
         <input
           readOnly
