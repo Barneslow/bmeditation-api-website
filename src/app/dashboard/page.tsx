@@ -29,6 +29,7 @@ const page = async () => {
           <ApiDashboard />
         </div>
       ) : (
+        <RequestApiKey />
       )}
     </div>
   );
