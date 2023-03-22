@@ -45,7 +45,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
       <div className="flex flex-col gap-6 items-center">
         <Key className="mx-auto h-12 w-12 text-gray-400" />
         <h1 className="heading text-center">Request your API key</h1>
-        <p className="text-white text-s md:text-lg">
+        <p className="text-sky-900 text-s md:text-lg dark:text-white">
           You haven&apos;t requested an API key yet.
         </p>
       </div>
