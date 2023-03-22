@@ -8,8 +8,8 @@ import { notFound } from "next/navigation";
 import ApiDashboard from "@/components/ApiDashboard";
 
 export const metadata: Metadata = {
-  title: "Similarity API | Dashboard",
-  description: "Free & open-source text similarity API",
+  title: "BMeditation API | Dashboard",
+  description: "Find out your api data",
 };
 
 const page = async () => {
@@ -23,7 +23,7 @@ const page = async () => {
   return (
     <div className="max-w-7xl mx-auto mt-16">
       {apiKey ? (
-        <div className="flex flex-col space-y-">
+        <div className="flex flex-col space-y-10">
           <RequestApiKey />
           {/* @ts-expect-error Server Component */}
           <ApiDashboard />
