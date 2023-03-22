@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const page: FC = () => {
   return (
-    <div className="container max-w-7xl mx-auto mt-12">
+    <div className="container h-full max-w-7xl mx-auto mt-12 pb-10">
       <div className="flex flex-col items-center gap-6">
         <h1 className="text-sky-900 text-center text-3xl md:text-5xl lg:text-left font-extrabold leading-tight tracking-tighter dark:text-amber-300">
           Make A Request
