@@ -16,7 +16,9 @@ const page: FC = () => {
         <h1 className="text-sky-900 text-center text-3xl md:text-5xl lg:text-left font-extrabold leading-tight tracking-tighter dark:text-amber-300">
           Make A Request
         </h1>
-        <p className="text-white text-s md:text-lg">api/v1/bmeditation</p>
+        <p className="text-sky-900 text-s md:text-lg dark:text-white">
+          api/v1/bmeditation
+        </p>
         <DocumentationTabs />
       </div>
     </div>
