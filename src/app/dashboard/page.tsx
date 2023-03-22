@@ -23,13 +23,12 @@ const page = async () => {
   return (
     <div className="max-w-7xl mx-auto mt-16">
       {apiKey ? (
-        // @ts-expect-error Server Component
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-">
           <RequestApiKey />
+          {/* @ts-expect-error Server Component */}
           <ApiDashboard />
         </div>
       ) : (
-        <RequestApiKey />
       )}
     </div>
   );
