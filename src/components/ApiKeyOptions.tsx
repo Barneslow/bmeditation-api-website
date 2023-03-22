@@ -12,7 +12,6 @@ import { revokeApiKey } from "@/app/helpers/remove-api-key";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FC, useState } from "react";
-import Button from "./ui/Button";
 import { toast } from "./ui/toast";
 
 interface ApiKeyOptionsProps {
@@ -61,7 +60,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyKey }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger disabled={isCreatingNew || isRevoking} asChild>
-        <Button variant="ghost" className="flex gap-2 items-center">
+        <button className="btn auth-btn flex gap-2 items-center">
           <p>
             {isCreatingNew
               ? "Creating new key"
@@ -72,7 +71,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyKey }) => {
           {isCreatingNew || isRevoking ? (
             <Loader2 className="animate-spin h-4 w-4" />
           ) : null}
-        </Button>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem

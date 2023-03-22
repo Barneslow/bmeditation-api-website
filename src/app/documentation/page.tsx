@@ -2,8 +2,6 @@ import { FC } from "react";
 import "simplebar-react/dist/simplebar.min.css";
 
 import type { Metadata } from "next";
-import LargeHeading from "@/components/ui/LargeHeading";
-import Paragraph from "@/components/ui/Paragraph";
 import DocumentationTabs from "@/components/DocumentationTabs";
 
 export const metadata: Metadata = {
@@ -15,8 +13,10 @@ const page: FC = () => {
   return (
     <div className="container max-w-7xl mx-auto mt-12">
       <div className="flex flex-col items-center gap-6">
-        <LargeHeading>Making a request</LargeHeading>
-        <Paragraph>api/v1/bmeditation</Paragraph>
+        <h1 className="text-sky-900 text-center text-3xl md:text-5xl lg:text-left font-extrabold leading-tight tracking-tighter dark:text-amber-300">
+          Make A Request
+        </h1>
+        <p className="text-white text-s md:text-lg">api/v1/bmeditation</p>
         <DocumentationTabs />
       </div>
     </div>

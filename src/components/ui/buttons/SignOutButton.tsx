@@ -2,12 +2,7 @@
 
 import { signOut } from "next-auth/react";
 import { FC, useState } from "react";
-import Button from "./Button";
-import { toast } from "./toast";
-/**
- * NextJS does not allow to pass function from server -> client components,
- * hence this unreusable component.
- */
+import { toast } from "../toast";
 
 interface SignOutButtonProps {}
 
@@ -28,9 +23,9 @@ const SignOutButton: FC<SignOutButtonProps> = ({}) => {
   };
 
   return (
-    <Button onClick={signUserOut} isLoading={isLoading}>
+    <button className="btn auth-btn" onClick={signUserOut}>
       Sign out
-    </Button>
+    </button>
   );
 };
 

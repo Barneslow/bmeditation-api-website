@@ -1,4 +1,3 @@
-// import ApiDashboard from "@/components/ApiDashboard";
 import RequestApiKey from "@/components/RequestApiKey";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { db } from "@/pages/api/auth/db";
@@ -25,7 +24,10 @@ const page = async () => {
     <div className="max-w-7xl mx-auto mt-16">
       {apiKey ? (
         // @ts-expect-error Server Component
-        <ApiDashboard />
+        <div className="flex flex-col space-y-6">
+          <RequestApiKey />
+          <ApiDashboard />
+        </div>
       ) : (
         <RequestApiKey />
       )}

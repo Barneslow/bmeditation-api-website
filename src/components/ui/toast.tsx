@@ -1,7 +1,6 @@
 "use client";
 
 import { Icons } from "@/components/Icons";
-import { cn } from "@/utils/utils";
 import * as React from "react";
 import hotToast, { Toaster as HotToaster } from "react-hot-toast";
 
@@ -14,11 +13,9 @@ interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Toast({ visible, className, ...props }: ToastProps) {
   return (
     <div
-      className={cn(
-        "min-h-16 mb-2 flex w-[350px] flex-col items-start gap-1 rounded-md bg-white px-6 py-4 shadow-lg",
-        visible && "animate-in slide-in-from-bottom-5",
-        className
-      )}
+      className={`min-h-16 mb-2 flex w-[350px] flex-col items-start gap-1 rounded-md bg-white px-6 py-4 shadow-lg
+        ${visible && "animate-in slide-in-from-bottom-5"}
+        ${className}`}
       {...props}
     />
   );
@@ -37,7 +34,7 @@ Toast.Icon = function ToastIcon({ name, className, ...props }: ToastIconProps) {
 
   return (
     <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100">
-      <Icon className={cn("h-10 w-10", className)} {...props} />
+      <Icon className={`h-10 w-10 ${className}`} {...props} />
     </div>
   );
 };
@@ -45,7 +42,7 @@ Toast.Icon = function ToastIcon({ name, className, ...props }: ToastIconProps) {
 interface ToastTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
 
 Toast.Title = function ToastTitle({ className, ...props }: ToastTitleProps) {
-  return <p className={cn("text-sm font-medium", className)} {...props} />;
+  return <p className={`text-sm font-medium ${className}`} {...props} />;
 };
 
 interface ToastDescriptionProps
@@ -55,7 +52,7 @@ Toast.Description = function ToastDescription({
   className,
   ...props
 }: ToastDescriptionProps) {
-  return <p className={cn("text-sm opacity-80", className)} {...props} />;
+  return <p className={`text-sm opacity-80" ${className}`} {...props} />;
 };
 
 interface ToastOpts {
@@ -72,10 +69,9 @@ export function toast(opts: ToastOpts) {
     ({ visible }) => (
       <Toast
         visible={visible}
-        className={cn({
-          "bg-red-600 text-white": type === "error",
-          "bg-black text-white": type === "success",
-        })}
+        className={`${type === "error" && "bg-red-600 text-white"} ${
+          type === "success" && "bg-black text-white"
+        }`}
       >
         <Toast.Title>{title}</Toast.Title>
         {message && <Toast.Description>{message}</Toast.Description>}

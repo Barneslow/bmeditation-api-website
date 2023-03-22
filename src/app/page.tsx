@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import LargeHeading from "../components/ui/LargeHeading";
-import Paragraph from "../components/ui/Paragraph";
 
 import type { Metadata } from "next";
-import Button from "@/components/ui/Button";
 import PlayStoreButton from "@/components/ui/PlayStoreButton";
 
 export const metadata: Metadata = {
@@ -18,20 +15,12 @@ export default function Home() {
       <div className="container pt-32  w-full mx-auto h-full">
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start lg:flex-row">
           <div className="gap-8 flex flex-col  sm:items-center lg:items-start">
-            <LargeHeading
-              size="lg"
-              className="three-d text-black dark:text-amber-300"
-            >
+            <h1 className="three-d main-heading">
               Discover the wisdom of the ages
-            </LargeHeading>
-            <LargeHeading
-              size="lg"
-              className="three-d text-black dark:text-amber-300"
-            >
-              BMeditation API
-            </LargeHeading>
+            </h1>
+            <h2 className="three-d main-heading">BMeditation API</h2>
 
-            <Paragraph className="max-w-xl text-black dark:text-white">
+            <p className="max-w-xl text-black dark:text-white">
               Use the BMeditation Quotes API to find reflective thought from
               histories greatest minds. Welcome to use in your own projects!
               Sign up with a free{" "}
@@ -41,14 +30,14 @@ export default function Home() {
               >
                 API key
               </Link>
-            </Paragraph>
+            </p>
 
             <div className="flex flex-col gap-0">
-              <Paragraph className="max-w-xl text-black dark:text-white">
+              <p className="max-w-xl text-black dark:text-white">
                 Unleash your creativity and calm your mind with our journalling
                 and meditation app. Write freely, reflect deeply, and find peace
                 with our expertly crafted meditations. Get it at the store now!
-              </Paragraph>
+              </p>
               <PlayStoreButton />
             </div>
           </div>

@@ -1,10 +1,9 @@
 "use client";
 
 import { FC, useState } from "react";
-import Button from "./Button";
 
 import { signIn } from "next-auth/react";
-import { toast } from "./toast";
+import { toast } from "../toast";
 
 interface SignInButtonProps {}
 
@@ -25,9 +24,9 @@ const SignInButton: FC<SignInButtonProps> = ({}) => {
   };
 
   return (
-    <Button onClick={signInWithGoogle} isLoading={isLoading}>
+    <button className="btn auth-btn" onClick={signInWithGoogle}>
       Sign In
-    </Button>
+    </button>
   );
 };
 

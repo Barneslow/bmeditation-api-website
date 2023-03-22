@@ -3,7 +3,6 @@ import { M_PLUS_Rounded_1c } from "next/font/google";
 import { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Providers from "../components/Providers";
-import { cn } from "../utils/utils";
 import { Toaster } from "@/components/ui/toast";
 
 const msPlus = M_PLUS_Rounded_1c({
@@ -15,7 +14,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
       lang="en"
-      className={cn("bg-white text-sky-900 antialiased", msPlus.className)}
+      className={`bg-white text-sky-900 antialiased", ${msPlus.className}`}
     >
       <body className="min-h-screen bg-slate-50 dark:bg-sky-900 antialiased">
         <Providers>

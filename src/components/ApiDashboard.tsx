@@ -4,9 +4,6 @@ import { formatDistance } from "date-fns";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import ApiKeyOptions from "./ApiKeyOptions";
-import { Input } from "./ui/Input";
-import LargeHeading from "./ui/LargeHeading";
-import Paragraph from "./ui/Paragraph";
 import Table from "./ui/Table";
 
 const ApiDashboard = async ({}) => {
@@ -36,16 +33,22 @@ const ApiDashboard = async ({}) => {
 
   return (
     <div className="container flex flex-col gap-6">
-      <LargeHeading>Welcome back, {user.user.name}</LargeHeading>
+      <h1 className="heading">Welcome back, {user.user.name}</h1>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
-        <Paragraph>Your API key:</Paragraph>
-        <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
+        <p className="text-white text-s md:text-lg">Your API key:</p>
+
+        <input
+          readOnly
+          value={activeApiKey.key}
+          className="flex h-10 w-fit rounded-md border border-slate-300 bg-transparent py-2 px-3 text-sm truncate placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900"
+        />
+        {/* <Input className="w-fit truncate" readOnly value={activeApiKey.key} /> */}
         <ApiKeyOptions apiKeyKey={activeApiKey.key} />
       </div>
 
-      <Paragraph className="text-center md:text-left mt-4 -mb-4">
+      <p className="text-center text-white text-s md:text-lg md:text-left mt-4 -mb-4">
         Your API history:
-      </Paragraph>
+      </p>
 
       <Table userRequests={serializableRequests} />
     </div>

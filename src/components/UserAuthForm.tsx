@@ -1,10 +1,8 @@
 "use client";
 
-import { cn } from "@/utils/utils";
 import { signIn } from "next-auth/react";
 import * as React from "react";
 import { FC } from "react";
-import Button from "./ui/Button";
 import { toast } from "./ui/toast";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -29,11 +27,10 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
   };
 
   return (
-    <div className={cn("flex justify-center", className)} {...props}>
-      <Button
-        isLoading={isLoading}
+    <div className="flex justify-center">
+      <button
         type="button"
-        className="max-w-sm w-full bg-sky-900"
+        className="btn auth-btn max-w-sm w-full bg-sky-900"
         onClick={loginWithGoogle}
         disabled={isLoading}
       >
@@ -68,7 +65,7 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
           </svg>
         )}
         Google
-      </Button>
+      </button>
     </div>
   );
 };
